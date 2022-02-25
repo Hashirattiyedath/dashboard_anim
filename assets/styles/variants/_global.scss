@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: $brand_color;
+  }
+  
+  html {
+    overflow-x: hidden;
+    overflow-x: auto;
+    
+    body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+  
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+  
+      li {
+        list-style-type: none;
+        list-style: none;
+      }
+    }
+  }
+  
+  input,
+  select {
+    &:focus,
+    &:active {
+      outline: none !important;
+    }
+  }
+  

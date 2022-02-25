@@ -1,0 +1,24 @@
+@mixin mainHeader($fontSize: 19px, $color: var(--brand-color)) {
+    font-weight: 600;
+    color: $color;
+    font-family: $info-font;
+    font-size: $fontSize;
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+}
+
+@mixin SubHeader($fontSize) {
+    font-weight: 700;
+    font-size: $fontSize;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-family: $info-font;
+    letter-spacing: 0.3px;
+}
+
+@mixin flex($justifyContent: center, $alignItems: center) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
