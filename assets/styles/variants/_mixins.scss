@@ -1,18 +1,26 @@
-@mixin mainHeader($fontSize: 19px, $color: var(--brand-color)) {
+@mixin mainHeader($fontSize: 37px) {
     font-weight: 600;
-    color: $color;
-    font-family: $info-font;
+    color: $primary_color;
+    font-family: $roboto;
     font-size: $fontSize;
-    letter-spacing: 0.4px;
-    text-transform: capitalize;
+    letter-spacing: 0.3px;
 }
 
-@mixin SubHeader($fontSize) {
+@mixin SubHeader($fontSize: 14px) {
     font-weight: 700;
     font-size: $fontSize;
-    color: var(--primary-color);
+    color: $primary_color;
     margin-bottom: 12px;
-    font-family: $info-font;
+    font-family: $roboto;
+    letter-spacing: 0.3px;
+}
+
+@mixin Subtitle($fontSize: 14px) {
+    font-weight: 700;
+    font-size: $fontSize;
+    color: $secondary_color;
+    margin-bottom: 12px;
+    font-family: $open_sans;
     letter-spacing: 0.3px;
 }
 
