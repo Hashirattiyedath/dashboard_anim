@@ -1,19 +1,7 @@
-@import './variants/_fonts.scss';
-@import './variants/_variables.scss';
-@import './variants/_mixins.scss';
-@import './variants/_global.scss';
-
-.main_header {
-    @include mainHeader();
-}
-
-.sub_header {
-    @include SubHeader();
-}
-
-.sub_title {
-    @include Subtitle();
-}
+@import "./variants/_fonts.scss";
+@import "./variants/_variables.scss";
+@import "./variants/_mixins.scss";
+@import "./variants/_global.scss";
 
 /*-------------------------------------------------------
                 SIDEBAR SECTION START
@@ -24,7 +12,7 @@
     background: white;
     max-width: fit-content;
     height: 100vh;
-    box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
 
     .side_bar_container {
         @include flex(space-between);
@@ -39,7 +27,7 @@
         @include flex();
         cursor: pointer;
         padding: 5px 15px;
-        
+
         &:not(:first-child) {
             margin-top: 20px;
         }
@@ -51,4 +39,244 @@
 }
 /*-------------------------------------------------------
                 SIDEBAR SECTION END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                DASH MAIN HEADER START
+-------------------------------------------------------*/
+.dashboard_wrapper {
+    // margin-left: 80px;
+    overflow-x: hidden;
+    height: calc(100vh - 24px);
+    padding: 12px 12px 12px 85px;
+    // overflow: hidden;
+}
+
+.dash_header_section {
+    .dash_header_container {
+        border-bottom: 1px solid #e5e5e5;
+
+        @include flex(space-between);
+        .header_area {
+            .main_header {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+/*-------------------------------------------------------
+                DASH MAIN HEADER END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                  STATUS SECTION START
+-------------------------------------------------------*/
+.dash_status_section {
+    width: 100%;
+    padding: 15px 0px;
+
+    .status_main {
+        .sub_header {
+            @include SubHeader(13px, $roboto, #5e6877);
+            letter-spacing: 0.3px;
+            font-weight: 500;
+        }
+        display: flex;
+        gap: 20px;
+
+        .status_box {
+            background: white;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+            padding: 15px 16px;
+            flex: 1 1 25%;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.15s linear all;
+
+            h3 {
+                font-family: $poppins;
+                font-size: 22px;
+                font-weight: 600;
+                color: #444343;
+                margin: 0;
+
+                img {
+                    margin-left: 3px;
+                }
+            }
+            &:nth-child(2) {
+                h3 {
+                    color: $danger_color;
+                }
+            }
+            &:nth-child(2) {
+                h3 {
+                    color: $danger_color;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: -72px;
+                bottom: -72px;
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(176deg, #FFA101, #d69421);
+                transform: rotate(45deg);
+                opacity: 0.95;
+                transition: 0.35s ease-in-out all;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+
+/*-------------------------------------------------------
+                  STATUS SECTION END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                  BOOKING SECTION START
+-------------------------------------------------------*/
+.booking_section {
+    width: 100%;
+    padding: 15px 0px;
+
+    .booking_tab_button {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .booking_btn {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+
+            all: unset;
+            position: relative;
+            cursor: pointer;
+            color: $lite_gray_color;
+            font-size: 15px !important;
+            transition: 0.25s ease-in-out all;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -7px;
+                transition: 0.25s ease-in-out all;
+                width: 0%;
+                height: 3px;
+                background: $brand_color;
+            }
+
+            &.active {
+                font-size: 17px !important;
+                color: $secondary_color;
+                font-weight: 700;
+                position: relative;
+                transition: 0.25s ease-in-out all;
+
+                &::before {
+                    width: 80%;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .booking_tab_detail {
+        margin-top: 10px;
+    }
+}
+
+.booking_tab_detail {
+    .single_box {
+        background-color: white;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+        padding: 15px 18px;
+        border-radius: 8px;
+        margin-top: 20px;
+
+        .top_section {
+            h4 {
+                margin: 0;
+            }
+            p {
+                font-size: 13px;
+                font-family: $poppins;
+                margin-top: 5px;
+                color: #676c85;
+                font-weight: 600;
+            }
+        }
+
+        .center_section {
+            @include flex(space-between);
+            max-width: 180px;
+
+            p {
+                color: $text_lite;
+                color: #7f8fa4;
+                margin-bottom: 5px;
+                font-size: 13px;
+            }
+            h3 {
+                color: $text_lite;
+                color: #7f8fa4;
+                margin-bottom: 5px;
+                font-size: 13px;
+            }
+        }
+
+        .bottom_section {
+            @include flex(space-between);
+            padding-top: 8px;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 17px;
+            * {
+                margin-bottom: 0 !important;
+            }
+            h3 {
+                color: $button_color;
+            }
+            p {
+                @include Subtitle(12px);
+            }
+        }
+    }
+}
+
+.tabcontent {
+    animation: showBookingMenu 0.25s ease-in-out forwards;
+    transform: scale(0.9);
+    opacity: 0;
+
+    @keyframes showBookingMenu {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+/*-------------------------------------------------------
+                  BOOKING SECTION END
 -------------------------------------------------------*/

@@ -1,4 +1,4 @@
-@mixin mainHeader($fontSize: 37px) {
+@mixin mainHeader($fontSize: 32px) {
     font-weight: 600;
     color: $primary_color;
     font-family: $roboto;
@@ -6,19 +6,20 @@
     letter-spacing: 0.3px;
 }
 
-@mixin SubHeader($fontSize: 14px) {
+@mixin SubHeader($fontSize: 14px, $fontFamily: $roboto, $color: $secondary_color) {
     font-weight: 700;
     font-size: $fontSize;
-    color: $primary_color;
+    color: $color;
     margin-bottom: 12px;
-    font-family: $roboto;
+    font-family: $fontFamily;
     letter-spacing: 0.3px;
 }
 
-@mixin Subtitle($fontSize: 14px) {
-    font-weight: 700;
+@mixin Subtitle($fontSize: 13px) {
+    font-weight: 600;
+    font-size: $poppins;
     font-size: $fontSize;
-    color: $secondary_color;
+    color: $text_lite;
     margin-bottom: 12px;
     font-family: $open_sans;
     letter-spacing: 0.3px;
@@ -28,5 +29,19 @@
     display: flex;
     justify-content: $justifyContent;
     align-items: $alignItems;
+}
+
+@mixin buttons {
+    color: #fff;
+    background: #322A7D;
+    padding: 8px 13px;
+    font-size: 13.5px;
+    font-weight: 500;
+    font-family: "Open Sans";
+    line-height: 21px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
 }
 

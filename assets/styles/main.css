@@ -286,6 +286,9 @@
   font-display: swap;
 }
 
+/*-------------------------------------------------------
+                  GLOBAL RESET OPTION
+-------------------------------------------------------*/
 *,
 *::after,
 *::before {
@@ -305,6 +308,7 @@ html body {
   margin: 0;
   padding: 0;
   overflow-x: auto;
+  background: #ECEEF2;
 }
 
 html body ul {
@@ -323,30 +327,106 @@ select:active {
   outline: none !important;
 }
 
+/*-------------------------------------------------------
+                  MIXIN ADD TO CLASS
+-------------------------------------------------------*/
 .main_header {
   font-weight: 600;
-  color: #11141A;
-  font-family: "Roboto";
-  font-size: 37px;
+  color: #313a4d;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
   letter-spacing: 0.3px;
 }
 
 .sub_header {
   font-weight: 700;
   font-size: 14px;
-  color: #11141A;
+  color: #485365;
   margin-bottom: 12px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.3px;
 }
 
 .sub_title {
-  font-weight: 700;
-  font-size: 14px;
-  color: #354052;
+  font-weight: 600;
+  font-size: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #7F8FA4;
   margin-bottom: 12px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   letter-spacing: 0.3px;
+}
+
+.common_btn {
+  color: #fff;
+  background: #322A7D;
+  padding: 8px 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: "Open Sans";
+  line-height: 21px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+/*-------------------------------------------------------
+                  BUTTON COMMON STYLE
+-------------------------------------------------------*/
+.ctx_btn {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
+
+.ctx_btn::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  content: "";
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.ctx_btn:hover::before {
+  -webkit-animation: circle 0.73s;
+  animation: circle 0.73s;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
 }
 
 /*-------------------------------------------------------
@@ -360,8 +440,8 @@ select:active {
   max-width: -moz-fit-content;
   max-width: fit-content;
   height: 100vh;
-  -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
 }
 
 .side_bar_section .side_bar_container {
@@ -406,5 +486,304 @@ select:active {
 
 /*-------------------------------------------------------
                 SIDEBAR SECTION END
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+                DASH MAIN HEADER START
+-------------------------------------------------------*/
+.dashboard_wrapper {
+  overflow-x: hidden;
+  height: calc(100vh - 24px);
+  padding: 12px 12px 12px 85px;
+}
+
+.dash_header_section .dash_header_container {
+  border-bottom: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dash_header_section .dash_header_container .header_area .main_header {
+  margin-bottom: 5px;
+}
+
+/*-------------------------------------------------------
+                DASH MAIN HEADER END
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+                  STATUS SECTION START
+-------------------------------------------------------*/
+.dash_status_section {
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.dash_status_section .status_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.dash_status_section .status_main .sub_header {
+  font-weight: 700;
+  font-size: 13px;
+  color: #5e6877;
+  margin-bottom: 12px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.3px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+.dash_status_section .status_main .status_box {
+  background: white;
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+  padding: 15px 16px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+}
+
+.dash_status_section .status_main .status_box h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #444343;
+  margin: 0;
+}
+
+.dash_status_section .status_main .status_box h3 img {
+  margin-left: 3px;
+}
+
+.dash_status_section .status_main .status_box:nth-child(2) h3 {
+  color: #F35162;
+}
+
+.dash_status_section .status_main .status_box:nth-child(2) h3 {
+  color: #F35162;
+}
+
+.dash_status_section .status_main .status_box::before {
+  content: '';
+  position: absolute;
+  right: -72px;
+  bottom: -72px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(176deg, #FFA101, #d69421);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 0.95;
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+  border-radius: 50%;
+}
+
+.dash_status_section .status_main .status_box:hover {
+  -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+/*-------------------------------------------------------
+                  STATUS SECTION END
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+                  BOOKING SECTION START
+-------------------------------------------------------*/
+.booking_section {
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.booking_section .booking_tab_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.booking_section .booking_tab_button .booking_btn {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  all: unset;
+  position: relative;
+  cursor: pointer;
+  color: #BBC5D5;
+  font-size: 15px !important;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
+
+.booking_section .booking_tab_button .booking_btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+  width: 0%;
+  height: 3px;
+  background: #FFA101;
+}
+
+.booking_section .booking_tab_button .booking_btn.active {
+  font-size: 17px !important;
+  color: #485365;
+  font-weight: 700;
+  position: relative;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
+
+.booking_section .booking_tab_button .booking_btn.active::before {
+  width: 80%;
+}
+
+.booking_section .booking_tab_button .booking_btn:hover::before {
+  width: 80%;
+}
+
+.booking_section .booking_tab_detail {
+  margin-top: 10px;
+}
+
+.booking_tab_detail .single_box {
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+  padding: 15px 18px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.booking_tab_detail .single_box .top_section h4 {
+  margin: 0;
+}
+
+.booking_tab_detail .single_box .top_section p {
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 5px;
+  color: #676c85;
+  font-weight: 600;
+}
+
+.booking_tab_detail .single_box .center_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 180px;
+}
+
+.booking_tab_detail .single_box .center_section p {
+  color: #7F8FA4;
+  color: #7f8fa4;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.booking_tab_detail .single_box .center_section h3 {
+  color: #7F8FA4;
+  color: #7f8fa4;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.booking_tab_detail .single_box .bottom_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 17px;
+}
+
+.booking_tab_detail .single_box .bottom_section * {
+  margin-bottom: 0 !important;
+}
+
+.booking_tab_detail .single_box .bottom_section h3 {
+  color: #322A7D;
+}
+
+.booking_tab_detail .single_box .bottom_section p {
+  font-weight: 600;
+  font-size: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #7F8FA4;
+  margin-bottom: 12px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.tabcontent {
+  -webkit-animation: showBookingMenu 0.25s ease-in-out forwards;
+          animation: showBookingMenu 0.25s ease-in-out forwards;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
+}
+
+@-webkit-keyframes showBookingMenu {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes showBookingMenu {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*-------------------------------------------------------
+                  BOOKING SECTION END
 -------------------------------------------------------*/
 /*# sourceMappingURL=main.css.map */
