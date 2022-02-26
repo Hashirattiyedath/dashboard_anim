@@ -54,19 +54,41 @@ mobilTOggleEl.addEventListener('click', function () {
   this.classList.toggle('active');
 })
 
-
-//===============> ENABLE ANIMATION <==============//
-wow = new WOW(
-  {
-    animateClass: 'animated',
-    offset: 100,
-    callback: function (box) {
-      console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-    }
-  }
-);
-wow.init();
-
-
 //===============> AOS initializtion <==============//
 AOS.init();
+
+
+//===============> ENABLE ANIMATION <==============//
+
+
+
+
+var loadingVar;
+let preloader__wrapper = document.querySelector('.preloader__wrapper');
+let preloader__img = document.querySelector('.preloader__img');
+
+window.addEventListener('load', () => {
+  loadingVar = setTimeout(showPage, 850)
+})
+
+const showPage = () => {
+  preloader__wrapper.classList.add("bg_done");
+  preloader__img.classList.add("loader_done");
+
+  setTimeout(() => {
+    //====> enable WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 100,
+        callback: function (box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+  }, 200)
+
+}
+
+
