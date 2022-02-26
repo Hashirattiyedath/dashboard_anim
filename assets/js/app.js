@@ -1,5 +1,4 @@
 //===============> BOOKING TAB  <==============//
-
 function openBookingTab(evt, openBookingTab) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -15,3 +14,59 @@ function openBookingTab(evt, openBookingTab) {
 }
 
 document.getElementById("defaultOpen").click();
+
+
+//===============> DISBLE COPY BTN  <==============//
+const editBtnEl = document.querySelector('.edit_btn');
+const inputEl = document.querySelector('.copy_text_area input');
+
+inputEl.setAttribute('setDesabled', true);
+editBtnEl.addEventListener('click', () => {
+
+  if (inputEl.hasAttribute('setDesabled')) {
+    inputEl.removeAttribute('setDesabled');
+  }
+  else {
+    inputEl.setAttribute('setDesabled', true)
+  }
+})
+
+
+//===============> COPY TEXT POPUP  <==============//
+const copy_success = document.querySelector('.copy_success');
+function copText() {
+  inputEl.select();
+  document.execCommand("copy");
+
+  copy_success.classList.add('copied');
+
+  setTimeout(() => {
+    copy_success.classList.remove('copied');
+  }, 1500)
+}
+
+//===============> COPY TEXT POPUP  <==============//
+const mobilTOggleEl = document.querySelector('.mobile_toggle_menu');
+const rightSidebar = document.querySelector('.dashboard_right_wrapper');
+
+mobilTOggleEl.addEventListener('click', function () {
+  rightSidebar.classList.toggle('active');
+  this.classList.toggle('active');
+})
+
+
+//===============> ENABLE ANIMATION <==============//
+wow = new WOW(
+  {
+    animateClass: 'animated',
+    offset: 100,
+    callback: function (box) {
+      console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+    }
+  }
+);
+wow.init();
+
+
+//===============> AOS initializtion <==============//
+AOS.init();

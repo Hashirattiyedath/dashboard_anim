@@ -12,6 +12,7 @@
     background: white;
     max-width: fit-content;
     height: 100vh;
+
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
 
     .side_bar_container {
@@ -45,11 +46,25 @@
                 DASH MAIN HEADER START
 -------------------------------------------------------*/
 .dashboard_wrapper {
-    // margin-left: 80px;
     overflow-x: hidden;
-    height: calc(100vh - 24px);
-    padding: 12px 12px 12px 85px;
-    // overflow: hidden;
+    height: 100vh;
+
+    padding: 0px 0px 0px 85px;
+    display: flex;
+    gap: 30px;
+
+    .dashboard_left_section {
+        padding: 12px 0px 12px 0;
+    }
+
+    .dashbboard_left_wrapper {
+        flex: 1 1 calc(70% - 30px);
+        max-width: 70%;
+    }
+    .dashboard_right_wrapper {
+        flex: 1 1 calc(30% - 30px);
+        max-width: 30%;
+    }
 }
 
 .dash_header_section {
@@ -78,17 +93,17 @@
     .status_main {
         .sub_header {
             @include SubHeader(13px, $roboto, #5e6877);
-            letter-spacing: 0.3px;
             font-weight: 500;
         }
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
 
         .status_box {
             background: white;
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
             padding: 15px 16px;
-            flex: 1 1 25%;
+            flex: 1 1 calc(25% - 20px);
             border-radius: 8px;
             position: relative;
             overflow: hidden;
@@ -117,13 +132,13 @@
             }
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 right: -72px;
                 bottom: -72px;
                 width: 100px;
                 height: 100px;
-                background: linear-gradient(176deg, #FFA101, #d69421);
+                background: linear-gradient(176deg, #ffa101, #d69421);
                 transform: rotate(45deg);
                 opacity: 0.95;
                 transition: 0.35s ease-in-out all;
@@ -132,7 +147,12 @@
 
             &:hover {
                 box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-                transform: scale(1.03);
+                transform: scale(1.05);
+
+                &::before {
+                    right: -68px;
+                    bottom: -68px;
+                }
             }
         }
     }
@@ -251,7 +271,7 @@
                 margin-bottom: 0 !important;
             }
             h3 {
-                color: $button_color;
+                color: $blue_color;
             }
             p {
                 @include Subtitle(12px);
@@ -276,7 +296,483 @@
         }
     }
 }
-
 /*-------------------------------------------------------
                   BOOKING SECTION END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                PROFILE/SEARCH SECTION START
+-------------------------------------------------------*/
+.dashboard_right_section {
+    background: white;
+    height: 100%;
+
+
+    .profile_section {
+        padding: 15px 18px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.search_area {
+    @include flex(unset);
+    gap: 25px;
+
+    .single_input {
+        flex-grow: 1;
+        position: relative;
+
+        input {
+            border-radius: 30px;
+            padding-left: 50px;
+        }
+
+        &::before {
+            content: "\f002";
+            font-family: "fontAwesome";
+            display: inline-block;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #354052;
+            font-size: 15px;
+            width: 26px;
+            border-right: 1px solid #ebebeb;
+        }
+    }
+
+    .notifi_icon {
+        @include flex();
+        width: 38px;
+        height: 38px;
+        background: #ebebeb;
+        border-radius: 50%;
+    }
+}
+/*-------------------------------------------------------
+                PROFILE/SEARCH SECTION END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                PROFILE/USER SECTION START
+-------------------------------------------------------*/
+.user_section {
+    width: 100%;
+    @include flex(unset);
+    gap: 10px;
+    margin-top: 25px;
+
+    .left_section {
+        .sub_header {
+            @include SubHeader(16px, $muli, #5e6877);
+            font-weight: 500;
+        }
+        p {
+            @include commonPara(12px);
+        }
+        h2 {
+            @include SubHeader(25px, $muli);
+        }
+    }
+    .right_section {
+        @include flex();
+        width: 177px;
+    }
+}
+
+.copy_profile {
+    width: 100%;
+    @include flex(space-between);
+    gap: 15px;
+    margin-top: 5px;
+
+    .copy_text_area {
+        @include flex();
+        position: relative;
+
+        input {
+            padding: 9px 57px 9px 15px;
+            border-radius: 30px;
+            position: relative;
+            @include SubHeader();
+            font-weight: 500;
+            height: 37px;
+
+            &[setDesabled] {
+                background-color: #ececec;
+                border: none;
+                pointer-events: none;
+            }
+        }
+
+        .copy_btn {
+            @include flex();
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #354052;
+            font-size: 14px;
+            width: 32px;
+            border-left: 1px solid #c7c7c7;
+            cursor: pointer;
+        }
+    }
+
+    .edit_btn {
+        button {
+            @include buttons(#dbbbff, $blue_color, true);
+            transition: 0.25s ease-in-out all;
+
+            &:hover {
+                background-color: $blue_color;
+                color: #fff;
+            }
+        }
+    }
+
+    .copy_success {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        margin: auto;
+        @include flex(space-between);
+        background-color: white;
+        box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.25);
+        max-width: 180px;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: 0.4s cubic-bezier(0.48, -0.12, 0.29, 1.87) all;
+        transform: translateY(180%);
+        border-left: 3px solid #53c395;
+
+        p {
+            margin: 0;
+            font-size: 16px;
+            font-family: $roboto;
+            font-weight: 500;
+            color: #6d6d6d;
+            letter-spacing: 0.3px;
+        }
+
+        i {
+            font-size: 20px;
+        }
+
+        &.copied {
+            transform: translateY(0%);
+        }
+    }
+}
+/*-------------------------------------------------------
+                PROFILE/USER SECTION END
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                PROFILE/USER SECTION START
+-------------------------------------------------------*/
+.upgrade_section {
+    background: linear-gradient(to left, #04215ee3, #04215ee3), url("../images/Pattern.svg") repeat-x;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    @include flex(space-between);
+    margin-top: 30px;
+    animation: moveBg 60s linear alternate infinite;
+
+    // upgrade bg animation
+    @keyframes moveBg {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 1500px;
+        }
+    }
+
+    // premium icon animation
+    &:hover {
+        .primium_icon {
+            animation: zoomUp 0.4s ease-in-out forwards;
+
+            @keyframes zoomUp {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    .left_section {
+        h3 {
+            @include mainHeader(20px);
+            color: white;
+        }
+
+        p {
+            @include Subtitle();
+            margin-bottom: 0;
+        }
+    }
+
+    .right_section {
+        .primium_icon {
+            @include flex();
+            width: 50px;
+            height: 50px;
+            background: $brand_color;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.25s ease-in-out all;
+
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+/*-------------------------------------------------------
+                PROFILE/USER SECTION START
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+                 REMIND SECTION START
+-------------------------------------------------------*/
+.remind_section {
+    width: 100%;
+    margin-top: 30px;
+
+    .main_head {
+        @include flex(space-between);
+
+        h3 {
+            @include SubHeader(18.5px);
+        }
+
+        p {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            color: $brand_color;
+            font-size: 13px;
+
+            i {
+                -webkit-text-stroke: 0.4px white;
+            }
+        }
+    }
+}
+
+.notification_list {
+    margin-top: 20px;
+
+    .single_list {
+        @include flex(unset);
+        gap: 23px;
+
+        &:not(:first-child) {
+            margin-top: 26px;
+        }
+
+        .icon {
+            @include flex();
+            width: 45px;
+            height: 45px;
+            background-color: #eee;
+            border-radius: 15px;
+        }
+
+        .msg_area {
+            h3 {
+                @include SubHeader(15px);
+                margin-bottom: 5px;
+            }
+
+            p {
+                margin-bottom: 0 !important;
+                @include Subtitle(13px);
+                letter-spacing: 0;
+                font-weight: 500 !important;
+            }
+        }
+
+        &:nth-child(1) {
+            .icon {
+                background-color: #f3516138;
+                i {
+                    color: $danger_color;
+                    font-size: 22px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            .icon {
+                background-color: #ffa20128;
+                i {
+                    color: $warning_color;
+                    font-size: 22px;
+                }
+            }
+        }
+        &:nth-child(3) {
+            .icon {
+                background-color: #f3516138;
+                i {
+                    color: $danger_color;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+/*-------------------------------------------------------
+                 REMIND SECTION END
+-------------------------------------------------------*/
+
+
+.mobile_toggle_menu {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    width: 45px;
+    height: 45px;
+    @include flex();
+    border-radius: 50%;
+    background: white;
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.25);
+    cursor: pointer;
+    display: none;
+
+    i {
+        font-size: 22px;
+        color: #6b6b6b;
+        -webkit-text-stroke: 0.5px white;
+    }
+
+    &.active {
+        i::before {
+            content: '\f00d';
+            font-family: 'fontAwesome';
+        }
+    }
+}
+
+
+/*-------------------------------------------------------
+                MEDIA QUERY START
+-------------------------------------------------------*/
+@media (max-width: 1183px) {
+    .dashboard_wrapper {
+        padding: 0px 20px 0px 85px;
+    }
+    
+    .dashbboard_left_wrapper {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .dashboard_right_wrapper {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: 0.25s ease-in-out all;
+        display: none;
+        flex: unset !important;
+        max-width: 350px !important;
+        width: 100%;
+
+        &.active {
+            transition: 0.25s ease-in-out all;
+            transform: translateX(0%);
+            display: block; 
+        }
+    }
+
+
+    .mobile_toggle_menu {
+        display: flex;
+        transition: 0.1s linear all;
+        
+    }
+}
+
+@media (max-width: 767.9px) {
+    .status_main {
+        .status_box {
+            flex: 1 1 calc(50% - 25px) !important;
+        }
+    }
+
+    .side_bar_container {
+        display: none !important;
+    }
+    
+    .dashboard_wrapper {
+        padding: 0px 20px 0px 20px;
+    }
+
+    .mobile_toggle_menu {
+        left: 20px;
+    }
+
+
+    .dashboard_right_wrapper {
+        position: absolute;
+        right: auto !important;
+        left: 0 !important;
+
+        &.active {
+            transition: 0.25s ease-in-out all;
+            transform: translateX(0%);
+            display: block; 
+        }
+    }
+
+    .dash_header_container {
+        flex-direction: column;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #322a7d30 !important;
+        margin-bottom: 10px;
+
+        .sub_title {
+            text-align: center;
+        }
+    }
+
+    .dash_status_container {
+        .sub_header {
+            font-size: 15px !important;
+            margin-bottom: 12px !important;
+            padding-left: 5px !important;
+        }
+    }
+}
+
+@media (max-width: 568px) {
+    .status_main {
+        .status_box {
+            flex: 1 1 100% !important;
+        }
+    }
+}
+/*-------------------------------------------------------
+                MEDIA QUERY END
 -------------------------------------------------------*/

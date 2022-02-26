@@ -20,7 +20,10 @@
 
     <!-- css links -->
     <link rel="icon" href="./assets/images/logo-icon.svg">
+    <link rel="stylesheet" href="./assets/styles/library/aos.css">
+    <link rel="stylesheet" href="./assets/styles/library/animate.css">
     <link rel="stylesheet" href="./assets/styles/library/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 
@@ -32,36 +35,36 @@
     <aside class="side_bar_section">
         <div class="side_bar_container">
             <div class="logo_area">
-                <img src="./assets/images/logo-icon.svg" alt="">
+                <img src="./assets/images/logo-icon.svg" class="img-fluid" alt="">
             </div>
 
             <div class="side_bar_list">
                 <li class="active">
-                    <img src="./assets/images/side-icons/dashboard.svg" alt="">
+                    <img src="./assets/images/side-icons/dashboard.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/graph.svg" alt="">
+                    <img src="./assets/images/side-icons/graph.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/appointments.svg" alt="">
+                    <img src="./assets/images/side-icons/appointments.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/enquiries.svg" alt="">
+                    <img src="./assets/images/side-icons/enquiries.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/messages.svg" alt="">
+                    <img src="./assets/images/side-icons/messages.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/settings.svg" alt="">
+                    <img src="./assets/images/side-icons/settings.svg" class="img-fluid" alt="">
                 </li>
                 <li>
-                    <img src="./assets/images/side-icons/users.svg" alt="">
+                    <img src="./assets/images/side-icons/users.svg" class="img-fluid" alt="">
                 </li>
             </div>
 
             <div class="logout_area">
                 <li>
-                    <img src="./assets/images/side-icons/messages.svg" alt="">
+                    <img src="./assets/images/side-icons/messages.svg" class="img-fluid" alt="">
                 </li>
             </div>
         </div>
@@ -77,522 +80,625 @@
 ================================================== -->
     <section class="dashboard_wrapper">
 
-        <div class="row">
-            <div class="col-md-8">
-                <div class="dashboard_left_section">
-                    <!--========= MAIN HEADER AREA START ==========-->
-                    <div class="dash_header_section">
-                        <div class="dash_header_container">
-                            <div class="main_header_area">
-                                <h1 class="main_header">Dashboard</h1>
-                                <p class="sub_title">Welcome Back</p>
-                            </div>
-                            <div class="btn_wrapper">
-                                <button class="ctx_btn common_btn">Customise Block</button>
-                            </div>
+        <div class="dashbboard_left_wrapper">
+            <div class="dashboard_left_section">
+                <!--========= MAIN HEADER AREA START ==========-->
+                <div class="dash_header_section">
+                    <div class="dash_header_container">
+                        <div class="main_header_area">
+                            <h1 class="main_header">Dashboard</h1>
+                            <p class="sub_title">Welcome Back</p>
+                        </div>
+                        <div class="btn_wrapper">
+                            <button class="ctx_btn common_btn">Customise Block</button>
                         </div>
                     </div>
-                    <!--========= MAIN HEADER AREA END ==========-->
-
-
-                    <!--========= STATUS SECTION START ==========-->
-                    <div class="dash_status_section">
-                        <div class="dash_status_container">
-                            <div class="header_area">
-                                <h1 class="sub_header">Quick Status</h1>
-                            </div>
-
-                            <div class="status_main">
-                                <div class="status_box">
-                                    <p class="sub_header">Total Booking</p>
-                                    <h3>28,345</h3>
-                                </div>
-                                <div class="status_box">
-                                    <p class="sub_header">Pending Aprovel</p>
-                                    <h3>120</h3>
-                                </div>
-                                <div class="status_box">
-                                    <p class="sub_header">New Clints this month</p>
-                                    <h3>
-                                        <span>89</span>
-                                        <img src="./assets/images/increase.svg" alt="">
-                                    </h3>
-                                </div>
-                                <div class="status_box">
-                                    <p class="sub_header">Returning Clients</p>
-                                    <h3>
-                                        <span>46%</span>
-                                        <img src="./assets/images/decrease.svg" alt="">
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= STATUS SECTION END ==========-->
-
-
-                    <!--========= BOOKING SECTION START ==========-->
-                    <section class="booking_section">
-                        <div class="booking_tab_button">
-                            <button class="booking_btn active" onclick="openBookingTab(event, 'Booking')"
-                                id="defaultOpen">Booking</button>
-                            <button class="booking_btn" onclick="openBookingTab(event, 'Enqueries')">Enqueries</button>
-                            <button class="booking_btn" onclick="openBookingTab(event, 'Service')">My Service</button>
-                        </div>
-                        <div class="booking_tab_detail">
-                            <div id="Booking" class="tabcontent">
-                                <!-- row-start -->
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- row-end -->
-                            </div>
-
-                            <div id="Enqueries" class="tabcontent">
-                                <!-- row-start -->
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- row-end -->
-                            </div>
-
-                            <div id="Service" class="tabcontent">
-                                <!-- row-start -->
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>11:00 - 12:00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Flonna Wade</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Beatric Carol</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="single_box">
-                                            <div class="top_section">
-                                                <h3 class="sub_header">Amanda Chavez</h3>
-                                                <h4 class="sub_title">Service</h4>
-                                                <p>Physiotherapy</p>
-                                            </div>
-                                            <div class="center_section">
-                                                <div class="left_section">
-                                                    <p>Date</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                                <div class="right_section">
-                                                    <p>Time</p>
-                                                    <h3>25 July 2020</h3>
-                                                </div>
-                                            </div>
-                                            <div class="bottom_section">
-                                                <h3 class="sub_header">Accept Booking</h3>
-                                                <p class="sub_title">Decline</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- row-end -->
-                            </div>
-                        </div>
-                    </section>
-                    <!--========= BOOKING SECTION END ==========-->
                 </div>
+                <!--========= MAIN HEADER AREA END ==========-->
+
+
+                <!--========= STATUS SECTION START ==========-->
+                <div class="dash_status_section">
+                    <div class="dash_status_container">
+                        <div class="header_area">
+                            <h1 class="sub_header">Quick Status</h1>
+                        </div>
+
+                        <div class="status_main">
+                            <div class="status_box wow flipInY">
+                                <p class="sub_header">Total Booking</p>
+                                <h3>28,345</h3>
+                            </div>
+                            <div class="status_box wow flipInY" data-wow-delay="0.3s">
+                                <p class="sub_header">Pending Aprovel</p>
+                                <h3>120</h3>
+                            </div>
+                            <div class="status_box wow flipInY" data-wow-delay="0.5s">
+                                <p class="sub_header">New Clints this month</p>
+                                <h3>
+                                    <span>89</span>
+                                    <img src="./assets/images/increase.svg" alt="">
+                                </h3>
+                            </div>
+                            <div class="status_box wow flipInY" data-wow-delay="0.7s">
+                                <p class="sub_header">Returning Clients</p>
+                                <h3>
+                                    <span>46%</span>
+                                    <img src="./assets/images/decrease.svg" alt="">
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--========= STATUS SECTION END ==========-->
+
+
+                <!--========= BOOKING SECTION START ==========-->
+                <section class="booking_section">
+                    <div class="booking_tab_button">
+                        <button class="booking_btn active" onclick="openBookingTab(event, 'Booking')"
+                            id="defaultOpen">Booking</button>
+                        <button class="booking_btn" onclick="openBookingTab(event, 'Enqueries')">Enqueries</button>
+                        <button class="booking_btn" onclick="openBookingTab(event, 'Service')">My Service</button>
+                    </div>
+                    <div class="booking_tab_detail">
+                        <div id="Booking" class="tabcontent">
+                            <!-- row-start -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row-end -->
+                        </div>
+
+                        <div id="Enqueries" class="tabcontent">
+                            <!-- row-start -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row-end -->
+                        </div>
+
+                        <div id="Service" class="tabcontent">
+                            <!-- row-start -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>11:00 - 12:00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Flonna Wade</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Beatric Carol</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single_box">
+                                        <div class="top_section">
+                                            <h3 class="sub_header">Amanda Chavez</h3>
+                                            <h4 class="sub_title">Service</h4>
+                                            <p>Physiotherapy</p>
+                                        </div>
+                                        <div class="center_section">
+                                            <div class="left_section">
+                                                <p>Date</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                            <div class="right_section">
+                                                <p>Time</p>
+                                                <h3>25 July 2020</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottom_section">
+                                            <h3 class="sub_header">Accept Booking</h3>
+                                            <p class="sub_title">Decline</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row-end -->
+                        </div>
+                    </div>
+                </section>
+                <!--========= BOOKING SECTION END ==========-->
             </div>
+        </div>
 
-            <div class="col-md-4">
-                <div class="dashboard_right_section">
-                    
-                </div>
+        <div class="dashboard_right_wrapper">
+            <div class="dashboard_right_section">
+                <section class="profile_section">
+
+                    <!--========= SEARCH SECTION START ==========-->
+                    <div class="search_area">
+                        <div class="single_input">
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="notifi_icon">
+                            <img src="./assets/images/Notifications.svg" alt="">
+                        </div>
+                    </div>
+                    <!--========= SEARCH SECTION START ==========-->
+
+                    <!--========= USER SECTION START ==========-->
+                    <div class="user_section">
+                        <div class="left_section">
+                            <span class="sub_header">Hello,</span>
+                            <h2 class="main_header">Jonathan!</h2>
+                            <p>Copy your bio link and paste it in your profile to let people find you.</p>
+                        </div>
+
+                        <div class="right_section">
+                            <div class="user_img">
+                                <img src="./assets/images/user.svg" class="img-fluid" alt="">        
+                            </div>     
+                        </div>
+                    </div>
+
+                    <div class="copy_profile">
+                        <div class="copy_text_area">
+                            <input type="text" class="form-control" [setDesabled] value="scheddo.com/jonathan">
+                            <span class="copy_btn" onclick="copText()"> <i class="fa fa-clone"></i> </span>
+                        </div>
+                        <div class="edit_btn">
+                            <button class="common_btn">Edit Link</button>
+                        </div>
+
+                        <div class="copy_success">
+                            <p>Copied</p>
+                            <i class="fa fa-check-circle text-success" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!--========= USER SECTION END ==========-->
+
+                    <!--========= UPGRADE SECTION START ==========-->
+                    <div class="upgrade_section">
+                        <div class="left_section">
+                            <h3 class="main_header">Upgrade to PRO</h3>
+                            <p class="sub_title">For more Profile Controls</p>
+                        </div>
+                        <div class="right_section">
+                            <div class="primium_icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!--========= UPGRADE SECTION END ==========-->
+
+                    <!--========= REMIND SECTION START ==========-->
+                    <div class="remind_section">
+                        <div class="remind_container">
+                            <div class="main_head">
+                                <h3 class="sub_head">Reminders</h3>
+                                <p>View All <i class="fa fa-chevron-right"></i></p>
+                            </div>
+                            
+                            <ul class="notification_list">
+                                <!-- single list -->
+                                <li class="single_list">
+                                    <div class="icon">
+                                        <i class="fa fa-exclamation" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="msg_area">
+                                        <h3 class="sub_header">Booking Reminder</h3>
+                                        <p class="sub_title">Lorem ipsum dolor sit, amet.</p>
+                                    </div>
+                                </li>
+                                <!-- single list -->
+                                <li class="single_list">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="msg_area">
+                                        <h3 class="sub_header">New Message</h3>
+                                        <p class="sub_title">Lorem ipsum dolor sit, amet.</p>
+                                    </div>
+                                </li>
+                                <!-- single list -->
+                                <li class="single_list">
+                                    <div class="icon">
+                                        <i class="fa fa-exclamation" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="msg_area">
+                                        <h3 class="sub_header">Upcoming Booking</h3>
+                                        <p class="sub_title">Lorem ipsum dolor sit, amet.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--========= REMIND SECTION END ==========-->
+                </section>
             </div>
         </div>
     </section>
+
+    <div class="mobile_toggle_menu">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
     <!--==================================================
          		DASHBOARD-SECTION-START
 ================================================== -->
@@ -601,6 +707,9 @@
 
 
     <!-- script area -->
+    <script src="./assets/js/library/jquery.min.js"></script>
+    <script src="./assets/js/library/aos.js"></script>
+    <script src="./assets/js/library/wow.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 

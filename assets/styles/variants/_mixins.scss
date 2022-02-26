@@ -1,7 +1,7 @@
-@mixin mainHeader($fontSize: 32px) {
+@mixin mainHeader($fontSize: 32px, $fontFamily: $roboto) {
     font-weight: 600;
     color: $primary_color;
-    font-family: $roboto;
+    font-family: $fontFamily;
     font-size: $fontSize;
     letter-spacing: 0.3px;
 }
@@ -10,7 +10,6 @@
     font-weight: 700;
     font-size: $fontSize;
     color: $color;
-    margin-bottom: 12px;
     font-family: $fontFamily;
     letter-spacing: 0.3px;
 }
@@ -31,17 +30,29 @@
     align-items: $alignItems;
 }
 
-@mixin buttons {
-    color: #fff;
-    background: #322A7D;
+@mixin buttons ($bgColor: $blue_color, $color: #fff, $radius: false) {
+    color: $color;
+    background: $bgColor;
     padding: 8px 13px;
     font-size: 13.5px;
     font-weight: 500;
     font-family: "Open Sans";
     line-height: 21px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     letter-spacing: 0.3px;
+    white-space: nowrap;
+
+    @if $radius {
+        border-radius: 30px;
+    }
+    @else {
+        border-radius: 5px;
+    }
 }
 
+@mixin commonPara($fontSize: 13px, $color: #7F8FA4) {
+    color: $color;
+    font-size: $fontSize;
+    font-family: $open_sans;
+}
